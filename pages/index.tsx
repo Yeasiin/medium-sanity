@@ -10,7 +10,6 @@ interface Props {
 }
 
 export default function Home(props: Props) {
-  console.log(props.posts)
 
   return (
     <div className="mx-auto max-w-7xl">
@@ -24,7 +23,7 @@ export default function Home(props: Props) {
       {/* Hero Area */}
       <Hero />
       {/* Post */}
-      <div className="grid grid-cols-1 gap-3 py-2 sm:grid-cols-2 md:gap-6 md:py-6 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 py-2 px-2 sm:grid-cols-2 md:gap-6 md:py-6 lg:grid-cols-3">
         {props.posts.map((post) => (
           <Link key={post._id} href={`/post/${post.slug.current}`}>
             <div className=" group cursor-pointer overflow-hidden rounded-md border ">

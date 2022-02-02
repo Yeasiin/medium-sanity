@@ -17,7 +17,6 @@ interface IFormInput {
 
 function Post({ post }: Props) {
   const [submitted, setSubmitted] = useState(false)
-  console.log(post)
 
   const {
     register,
@@ -171,20 +170,21 @@ function Post({ post }: Props) {
       )}
 
       {/* Comment */}
+      {post.comments.length && (
+        <div className="mx-auto my-10 flex max-w-2xl flex-col border p-10 shadow-sm shadow-yellow-500 ">
+          <h3 className="text-2xl font-bold">Comment</h3>
+          <hr className="my-3" />
 
-      <div className="mx-auto my-10 flex max-w-2xl flex-col border p-10 shadow-sm shadow-yellow-500 ">
-        <h3 className="text-2xl font-bold">Comment</h3>
-        <hr className="my-3" />
-
-        {post.comments.map((comment) => (
-          <div key={comment._id}>
-            <p>
-              <span className="text-yellow-500">{comment.name}</span> :{' '}
-              {comment.comment}{' '}
-            </p>
-          </div>
-        ))}
-      </div>
+          {post.comments.map((comment) => (
+            <div key={comment._id}>
+              <p>
+                <span className="text-yellow-500">{comment.name} : </span>
+                {comment.comment}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   )
 }

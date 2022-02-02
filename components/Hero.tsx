@@ -1,7 +1,7 @@
 function Hero() {
   return (
     <div className="flex items-center justify-between bg-yellow-300 py-10 lg:py-0 ">
-      <div className="space-y-4 px-10">
+      <div className="space-y-4 px-4 md:px-10 ">
         <h1 className="max-w-xl font-serif text-6xl">
           <span className="underline decoration-black decoration-4 ">
             Medium
